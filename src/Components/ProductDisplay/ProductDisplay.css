@@ -1,0 +1,190 @@
+.gallery{
+    position: relative;
+}
+
+
+.main-display{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: top;
+}
+
+
+
+
+.main-display.img-click{
+    cursor: pointer;
+}
+
+.next, .prev{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding:2.2%;
+    margin: 0px 5%;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+.next{
+    right: 0;
+}
+
+.thumbnails{
+    display:none;
+}
+.light-box{
+    display: none;
+}
+@media (min-width:900px) {
+    
+   
+    .next, .prev{
+        display: none;
+    }
+    .main-display{
+        border-radius: 20px;
+    }
+    
+    .image-gallery{
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        max-width: 90%;
+        margin:0px  auto;
+    }
+
+    .thumbnails, .thumbnails-light{
+        display: flex;
+        justify-content: space-between;
+        max-width: 100%;
+        min-width: 100%;
+        margin-top: 20px;
+        padding-bottom: 3px;
+    }
+
+
+    .thumbnails-light div{
+        flex-basis: 20%;
+        background-color: white;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    .thumbnails img{
+        border-radius: 10px;  
+        min-width: 20%;
+        max-width: 20%;   
+        cursor: pointer;
+    }
+    .thumbnails-light img{
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+        display: block;
+    }
+
+    .thumbnails-light img:not(.thumbnail-select):hover, .thumbnails img:not(.thumbnail-select):hover {
+        opacity: 0.6;
+    }
+
+    .thumbnail-select{
+        opacity: 0.45;
+        border: solid 3px hsl(26, 100%, 55%);
+        
+        
+    }
+    
+
+    .light-box{
+        display: block;
+        position: fixed;
+        z-index: 1;
+        top:1%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+       
+        
+    }
+    .light-box .image-gallery{
+        margin-top: 4%;
+        max-width: 33%;
+        max-height: 90%;
+        object-fit: cover;
+        
+    }
+    .panel{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 0;
+        background-color: rgba(0,0,0,0.75);
+    }
+    .main-light{
+        position: relative;
+        max-height: 100%;
+        
+    }
+
+    .light-prev, .light-next{
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        padding:2.3%;
+        background-color: white;
+        margin: 0 5%;
+        padding:2.3%;
+        border-radius: 50%;
+        cursor: pointer;
+        
+    }
+
+    .light-prev:hover, .light-next:hover{
+        color: hsl(26, 100%, 55%);
+    }
+    .light-next{
+        right: 0;
+    }
+    .cross{
+       
+        height: 35px;
+        position: absolute;
+        left:65.3%;
+        top:1%;
+        margin: 10px 0px;
+        color: hsl(219, 5%, 35%);
+        cursor: pointer;
+    }
+    .cross:hover{
+        color: hsl(26, 100%, 55%);
+    }
+
+    .panel.hidden, .light-box.hidden{
+        display: none;
+    }
+    
+}
+
+@media (max-width:1400px) {
+    .product-main-display{
+        
+        gap: 0;
+    }
+    .info-wrapper{
+        padding:6% 5% !important
+    }
+    .light-box .image-gallery{
+        max-width: 43%;
+        top:4%;
+    }
+    .cross{
+        top:1%;
+        left:73%;
+    }
+}
